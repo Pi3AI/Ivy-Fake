@@ -1,20 +1,18 @@
 # IVY-FAKE: Unified Explainable Benchmark and Detector for AIGC Content
 
-[![Paper](https://img.shields.io/badge/paper-arXiv-B31B1B.svg)](https://arxiv.org/abs/2506.00979)
-[![Hugging Face Datasets](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Datasets-blue)](https://huggingface.co/datasets/AI-Safeguard/Ivy-Fake)
-[![GitHub Code](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Pi3AI/Ivy-Fake) [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
-
 ![Intro-image](static/images/figure1-poster-v2_00.png)
 
 This repository provides the official implementation of **IVY-FAKE** and **IVY-xDETECTOR**, a unified explainable framework and benchmark for detecting AI-generated content (AIGC) across **both images and videos**.
+
+Due to the double-blind requirement, we will release the dataset and related information after the conference concludes.
 
 ---
 
 ## 🔍 Overview
 
 **IVY-FAKE** is the **first large-scale dataset** designed for **multimodal explainable AIGC detection**. It contains:
-- **150K+** training samples (images + videos)
-- **18.7K** evaluation samples
+- **110K+** training samples (images + videos)
+- **5K** evaluation samples
 - **Fine-grained annotations** including:
   - Spatial and temporal artifact analysis
   - Natural language reasoning (<think>...</think>)
@@ -23,7 +21,7 @@ This repository provides the official implementation of **IVY-FAKE** and **IVY-x
 **IVY-xDETECTOR** is a vision-language detection model trained to:
 - Identify synthetic artifacts in images and videos
 - Generate **step-by-step reasoning**
-- Achieve **SOTA performance** across multiple benchmarks
+- Achieve **Superior performance** across multiple benchmarks
 
 ---
 
@@ -50,9 +48,11 @@ Before running, export the following environment variables:
 ```bash
 export OPENAI_API_KEY="your-api-key"
 export OPENAI_BASE_URL="https://api.openai.com/v1"  # or OpenAI's default base URL
-```
+```asd
 
-▶️ Run Evaluation
+Step1: Generating Eva Result:
+
+▶️ Run Evaluationasd
 
 ```bash
 python eva_scripts.py \
@@ -61,6 +61,15 @@ python eva_scripts.py \
 ```
 
 This script compares model predictions (<conclusion>real/fake</conclusion>) to the ground truth and logs mismatches to error_item.json.
+
+Step2: Print Result
+
+```bash
+python eva_step2_print_result.py \
+  --input_file ./MiniCPM-V-4_5_eva.jsonl \
+  --batch_size 16 \
+  --bert_model ./deberta-xlarge-mnli
+```
 
 ---
 

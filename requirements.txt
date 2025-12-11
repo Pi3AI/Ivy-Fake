@@ -4,3 +4,6 @@ sentence-transformers
 openai
 tqdm
 loguru
+scikit-learn
+bert-score
+rouge-score

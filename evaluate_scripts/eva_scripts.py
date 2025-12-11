@@ -1,11 +1,8 @@
 """
-Author: Arno Jiang
-Email: arnodjiang@gmail.com
-Date: 2025-06-07
 Description: This script is a template for evaluating AI-generated content using OpenAI's API.
 Launch scirpts:
-  - OPENAI_API_KEY="sk-5ac29d99ed944323a7e247d7907c6fd9" OPENAI_BASE_URL="https://api.deepseek.com/v1" python eva_scripts.py --eva_model_name gpt-4o-mini --res_json_path ./error_item.json
-  - OPENAI_API_KEY="sk-5ac29d99ed944323a7e247d7907c6fd9" OPENAI_BASE_URL="https://api.deepseek.com/v1" python eva_scripts.py --eva_model_name deepseek-chat --res_json_path ./error_item.json
+  - OPENAI_API_KEY="" OPENAI_BASE_URL="XXX" python eva_scripts.py --eva_model_name gpt-4o-mini --res_json_path ./error_item.json
+  - OPENAI_API_KEY="" OPENAI_BASE_URL="XX" python eva_scripts.py --eva_model_name deepseek-chat --res_json_path ./error_item.json
 """
 
 import time
